@@ -16,7 +16,8 @@ import android.media.RingtoneManager;
 
 public class LocalNotificationReceiver extends BroadcastReceiver {
     private static final String TAG = "Notification";
-
+    private static final String DEFAULT_CHANNEL_ID = "10001";
+	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		int notificationId = intent.getIntExtra("notification_id", 0);
@@ -29,7 +30,7 @@ public class LocalNotificationReceiver extends BroadcastReceiver {
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent2,
 				0);
 
-		NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(context,DEFAULT_CHANNEL_ID);
         builder.setContentTitle(title);
 		builder.setContentText(message);
 		builder.setSmallIcon(R.drawable.icon);
