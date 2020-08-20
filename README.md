@@ -67,13 +67,13 @@ func _on_Button_pressed():
 	var message = "Hola..!!"+ str(OS.get_time())
 	var interval = 5 # 5 seconds
 	var tag = 1 # tag is 1
-	ln.show_local_notification(t,"My title 1",interval,tag)
+	ln.show_local_notification(message,"My title 1",interval,tag)
 
 func _on_Button2_pressed():
 	var message = "Hello ..!!"+ str(OS.get_time())
 	var interval = 60 # 1 minute
 	var tag = 2 # tag is 2
-	ln.show_local_notification(t,"My title 1",interval,tag)
+	ln.show_local_notification(message,"My title 2",interval,tag)
 
 func _on_Button_Cancel_One_pressed():
 	var tag = 1 #Close the shown notification which have tag 1
